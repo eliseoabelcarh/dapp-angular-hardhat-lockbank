@@ -40,7 +40,7 @@ async function main() {
   // * Create enviroment file with the smart contract addresses
   let addresses = {"bankContract": bank.address, "tokenContract": token.address};
   let addressesJSON = JSON.stringify(addresses);
-  fs.writeFileSync("enviroment/contract-addresses.json", addressesJSON);
+  fs.writeFileSync("web3/enviroment/contract-addresses.json", addressesJSON);
 
 
   
