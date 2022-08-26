@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "hardhat:deploy": "npx hardhat run --network localhost scripts/deploy.js",
+    "hardhat:deploy": "npx hardhat run --network localhost web3/scripts/deploy.js",
     "hardhat:test": "npx hardhat test"
   },
   "private": true,

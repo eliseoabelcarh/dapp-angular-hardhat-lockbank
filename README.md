@@ -1,5 +1,12 @@
+# Dapp Angular Hardhat
 
-# Sample Hardhat Project
+run ganache (configured in hardhat.config.js)
+run tests:
+```npx hardhat test```
+for deploy smart contracts with ganache:
+```npx hardhat run --network localhost scripts/deploy.js```
+
+## Sample Hardhat Project
 
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
 
@@ -13,7 +20,7 @@ npx hardhat node
 npx hardhat run scripts/deploy.js
 ```
 
-# DappAngularHardhatLockbank
+## DappAngularHardhatLockbank
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
 
