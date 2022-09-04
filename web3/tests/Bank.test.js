@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 
 
-describe('Bank App', () => {
+xdescribe('Bank App', () => {
 
     let bank, token, owner, address_1, address_2
     let addresses

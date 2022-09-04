@@ -1,0 +1,59 @@
+<h1>bank</h1>
+
+<button
+  *ngIf="showConnectButton"
+  mat-raised-button
+  color="primary"
+  (click)="connectWallet()"
+>
+  Connect
+</button>
+
+<div *ngIf="showContent">
+  <div>Your current Account: {{ signerAddress }}</div>
+  <mat-card class="matCard"
+    ><strong>Bank Assets:</strong> {{ totalAssets }} {{ tokenSymbol }}</mat-card
+  >
+  <mat-card class="matCard"
+    ><strong>Deposited Amount:</strong> {{ userTotalAssets }}
+    {{ tokenSymbol }}</mat-card
+  >
+  <mat-card class="matCard"
+    ><strong>Yield Token Amount:</strong> {{ userTotalToken }}
+    {{ yieldTokenSymbol }}</mat-card
+  >
+  <!-- Deposit Form -->
+  <div class="center">
+    <mat-card class="matCard">
+      <form [formGroup]="depositForm" (ngSubmit)="deposit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Amount to Deposit</mat-label>
+          <input matInput type="number" formControlName="DepositAmount" />
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Deposit</button>
+      </form>
+    </mat-card>
+  </div>
+  <!-- Withdraw Form -->
+  <div class="center">
+    <mat-card class="matCard">
+      <form [formGroup]="withdrawForm" (ngSubmit)="withdraw()">
+        <mat-form-field appearance="fill">
+          <mat-label>Amount to Withdraw</mat-label>
+          <input matInput type="number" formControlName="WithdrawAmount" />
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Withdraw</button>
+      </form>
+    </mat-card>
+  </div>
+</div>
+
+<div *ngIf="loading" class="center loading">
+<mat-spinner ></mat-spinner>
+<div>{{messageLoading}}</div>
+</div>
+
+
+<div *ngIf="!isConnected">Connect First</div>
+
+<div *ngIf="wrongNetwork">Change to Rospten Network</div>

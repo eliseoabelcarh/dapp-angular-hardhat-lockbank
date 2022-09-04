@@ -21,7 +21,10 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    // this 2 resolve import Json imports problem
+    "resolveJsonModule":true,
+    "allowSyntheticDefaultImports":true,
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
